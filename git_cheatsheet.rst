@@ -84,7 +84,10 @@ push
         
 log
     ``git log`` will show you a list of commits
-    
+    ``git log --oneline`` is useful
+    ``git lol`` -> ``git config --global alias.lol "log --graph --decorate --pretty=oneline --all --abbrev-commit"``
+
+
 Notes
 -----
 
@@ -93,7 +96,6 @@ a branch.
 
 Tips & Tricks
 =============
-Source: https://wikileaks.org/ciav7p1/cms/page_1179773.html
 
 The "I forgot something in my last commit" Trick
 -------------------------------------------------

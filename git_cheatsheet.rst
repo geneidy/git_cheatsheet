@@ -9,6 +9,7 @@ tell git who you are
     ``git config --global user.email "you@example.com"``
 
     ``git config --global user.name "Your Name"``
+    
 
 clone a repository
     ``git clone [repository URL]``
@@ -27,6 +28,10 @@ checkout
     
     ``git checkout [commit sha]`` checks out the state of the repository at a
     particular commit
+    
+determine the difference between two branches
+    ``git diff master...[branch]``
+    ``git diff --name-status master...[branch]`` summary of merge
 
 current status of your local branches 
     ``git status``
@@ -62,11 +67,18 @@ fetch
     named remote
     
 merge
+    config merge
+    ``git config merge.tool vimdiff``
+    ``git config merge.conflictstyle diff3``
+    ``git config mergetool.prompt false``
+
     ``git merge [branch]`` merges the named branch into the working directory
 
     ``git merge [remote/branch] -m "[message]"`` merges the branch referred to
     into the working directory - **don't forget to fetch the remote before the
     merge**
+    
+    
     
 pull
     ``fetch`` followed by ``merge`` is often safer than ``pull`` - don't assume
@@ -81,11 +93,21 @@ push
 
     ``git push [remote] [branch]`` pushes the current branch to the named
     ``branch`` on ``remote``
+    
+    to delete a branch:
+    ``git checkout master``
+    ``git branch -d [branch]``
+    ``git push origin :[branch]``
         
 log
     ``git log`` will show you a list of commits
     ``git log --oneline`` is useful
     ``git lol`` -> ``git config --global alias.lol "log --graph --decorate --pretty=oneline --all --abbrev-commit"``
+    
+tag
+    ``git tag TAG_NAME -m "MESSAGE" [SHA1]`` create a tag named TAG_NAME, pointing to SHA1. The tag will have a short MESSAGE associated with it
+    ``git tag`` list all tags
+    ``git show TAG_NAME`` show information about the tag named TAG_NAME
 
 
 Notes

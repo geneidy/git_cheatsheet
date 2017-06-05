@@ -59,6 +59,9 @@ branch
 
     ``git branch -a`` to show remote branches too  
     
+    ``git branch -d [local_branch]`` remove a local branch 
+    
+    
 fetch
     ``git fetch`` gets the latest information about the branches on the default
     remote
@@ -94,6 +97,8 @@ push
     ``git push [remote] [branch]`` pushes the current branch to the named
     ``branch`` on ``remote``
     
+    ``git push --set-upstream origin [branch]`` create a remote-tracking branch to [branch] on the remote name origin
+    
     to delete a branch:
     ``git checkout master``
     ``git branch -d [branch]``
@@ -107,7 +112,12 @@ log
 tag
     ``git tag TAG_NAME -m "MESSAGE" [SHA1]`` create a tag named TAG_NAME, pointing to SHA1. The tag will have a short MESSAGE associated with it
     ``git tag`` list all tags
-    ``git show TAG_NAME`` show information about the tag named TAG_NAME
+    ``git show [TAG_NAME]`` show information about the tag named TAG_NAME
+    
+    ``git push origin [TAG_NAME]`` push tag
+    
+    ``git push origin :[TAG_NAME]`` delete tag from remote
+    ``git tag -d [TAG_NAME]``
 
 
 Notes
